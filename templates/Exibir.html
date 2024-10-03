@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/estilo.css">
+    <title>{{ Titulo }}</title>
+</head>
+<body class="fundo">
+
+    <h1 class="titulo">{{ Titulo }}</h1>
+     {% for estudante in lista %}
+        <div class="card2">
+            <h3>{{ estudante[1] }}</h3>
+            {% if estudante[3] == 'Masculino' %}
+                <img class="imgMenino" src="/static/garoto.png" alt="Menino">
+            {% else %}
+                <img class="imgMenino" src="/static/menina.png" alt="Menina">
+            {% endif %}
+            <p>RM: {{ estudante[0] }}</p>
+            <p>Idade: {{ estudante[2] }}</p>
+            <p>Sexo: {{ estudante[3] }}</p>
+            <p>Série: {{ estudante[4] }}</p>
+        </div>
+     {% endfor %}
+    <div>
+        <a href="/" class="btn-salvar">Voltar à Página Inicial</a>
+    </div>
+</body>
+</html>
+
